@@ -1,14 +1,22 @@
 <ion-item>
-  <ion-avatar slot="start" class="md hydrated" (click)="$event.stopPropagation();data.done=!data.done">
-    <!-- <img src="https://beta.ionicframework.com/docs/demos/api/list/avatar-luke.png"> -->
-    <ion-icon *ngIf="!data.done" style="font-size: 30px;" name="radio-button-off"></ion-icon>
-    <ion-icon *ngIf="data.done" style="font-size: 30px;" name="checkmark-circle-outline"></ion-icon>
-  </ion-avatar>
 
-  <ion-label>
-    <h2>{{data.name}}</h2>
-    <h3>{{data.amount | currency}}</h3>
-  </ion-label>
+    <ion-avatar (click)="updateStatus($event)"
+                class="md hydrated"
+                slot="start">
 
-  <ion-icon (click)="$event.stopPropagation();data.isImportant=!data.isImportant" [name]=" data.isImportant ? 'star' : 'star-outline' " slot="end"></ion-icon>
+        <ion-icon [name]=" data.done ? 'checkmark-circle-outline' : 'radio-button-off' "
+                  style="font-size: 30px;"
+        ></ion-icon>
+
+    </ion-avatar>
+
+    <ion-label>
+        <h2>{{data.name}}</h2>
+        <h3>{{data.amount | currency}}</h3>
+    </ion-label>
+
+    <ion-icon (click)="updateIsStarred($event)"
+              [name]=" data.isImportant ? 'star' : 'star-outline' " slot="end"
+    ></ion-icon>
+
 </ion-item> 
