@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, LoadingController } from '@ionic/angular';
-import { IExpenses } from 'src/app/models/expenses';
+import {IExpenses} from 'src/app/modules/expenses/models/expenses';
 import { AlertController } from '@ionic/angular';
 import { AppConstans } from 'src/app/uitls/app-constants';
-import { ExpensesService } from 'src/app/services/expenses/expenses.service';
+import {ExpensesService} from 'src/app/modules/expenses/services/expenses/expenses.service';
 
 @Component({
   selector: 'app-expenses-editor',

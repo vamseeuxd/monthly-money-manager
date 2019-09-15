@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ExpensesPage } from './expenses.page';
-import { AddExpensesComponent } from 'src/app/components/add-expenses/add-expenses.component';
-import { ExpensesListItemComponent } from 'src/app/components/expenses-list-item/expenses-list-item.component';
-import { ExpensesEditorComponent } from 'src/app/components/expenses-editor/expenses-editor.component';
+import {AddExpensesComponent} from 'src/app/modules/expenses/components/add-expenses/add-expenses.component';
+import {ExpensesListItemComponent} from 'src/app/modules/expenses/components/expenses-list-item/expenses-list-item.component';
+import {ExpensesEditorComponent} from 'src/app/modules/expenses/components/expenses-editor/expenses-editor.component';
 import { DatePickerModule } from 'ionic4-date-picker';
 
 @NgModule({

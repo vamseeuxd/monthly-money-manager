@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { IExpenses } from 'src/app/models/expenses';
+import {IExpenses} from 'src/app/modules/expenses/models/expenses';
 import { AlertController } from '@ionic/angular';
 
 @Component({

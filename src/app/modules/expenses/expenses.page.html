@@ -9,6 +9,8 @@
 <ion-content>
   <app-add-expenses (add)="addNewExpenses($event)"></app-add-expenses>
   <ion-list>
-    <app-expenses-list-item (click)="editExpenses(expenses)" [data]="expenses" *ngFor="let expenses of expensesList"></app-expenses-list-item>    
+    <app-expenses-list-item (click)="editExpenses(expenses)"
+                            *ngFor="let expenses of expensesList" [data]="expenses"
+    ></app-expenses-list-item>
   </ion-list>
 </ion-content>

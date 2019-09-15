@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IExpenses } from 'src/app/models/expenses';
+import {IExpenses} from 'src/app/modules/expenses/models/expenses';
 
 @Component({
   selector: 'app-expenses-list-item',

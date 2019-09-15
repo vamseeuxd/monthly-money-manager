@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IExpenses } from 'src/app/models/expenses';
+import {IExpenses} from 'src/app/modules/expenses/models/expenses';
 import { ModalController } from '@ionic/angular';
-import { ExpensesEditorComponent } from 'src/app/components/expenses-editor/expenses-editor.component';
-import { ExpensesService } from 'src/app/services/expenses/expenses.service';
+import {ExpensesEditorComponent} from 'src/app/modules/expenses/components/expenses-editor/expenses-editor.component';
+import {ExpensesService} from 'src/app/modules/expenses/services/expenses/expenses.service';
 
 @Component({
   selector: 'app-tab3',
