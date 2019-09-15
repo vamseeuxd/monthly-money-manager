@@ -1,0 +1,5 @@
+<ion-item>
+  <ion-icon name="add" slot="start" (click)="addExpensesClick()"></ion-icon>
+  <ion-input placeholder="Add a Expense" [(ngModel)]="expensesName" (keyup.enter)="addExpensesClick()"></ion-input>
+  <ion-icon [name]=" isImportant ? 'star' : 'star-outline' " (click)="isImportant = !isImportant" slot="end"></ion-icon>
+</ion-item>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Expenses
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-add-expenses (add)="addNewExpenses($event)"></app-add-expenses>
+  <ion-list>
+    <app-expenses-list-item (click)="editExpenses(expenses)" [data]="expenses" *ngFor="let expenses of expensesList"></app-expenses-list-item>    
+  </ion-list>
+</ion-content>

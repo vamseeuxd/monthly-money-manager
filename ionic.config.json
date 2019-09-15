@@ -1,0 +1,7 @@
+{
+  "name": "monthly-money-manager",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
