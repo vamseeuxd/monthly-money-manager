@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>332453894158-9ipc0sd88ndhtlpcsr5p3q2j8e942g0q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.332453894158-9ipc0sd88ndhtlpcsr5p3q2j8e942g0q</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>332453894158-cdualrfu1q6ihhsaubop88djtjhrqvpo.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC13LPh0HRGqH-141T-T6uxxyG-HzyyfLM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>332453894158</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vamsee.mmm</string>
+	<key>PROJECT_ID</key>
+	<string>monthly-money-manager-85bf4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>monthly-money-manager-85bf4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:332453894158:ios:ce4096eefa3408d69c445f</string>
+	<key>DATABASE_URL</key>
+	<string>https://monthly-money-manager-85bf4.firebaseio.com</string>
+</dict>
+</plist>

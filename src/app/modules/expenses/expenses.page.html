@@ -1,17 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Expenses
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Expenses</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <app-add-expenses (add)="addNewExpenses($event)"></app-add-expenses>
-  <ion-list>
-    <app-expenses-list-item (click)="editExpenses(expenses)"
-                            (updateExpenses)="updateExpenses($event)"
-                            *ngFor="let expenses of expensesList" [data]="expenses"
-    ></app-expenses-list-item>
-  </ion-list>
+<ion-content id="expensesMenu">
+
+    <ion-menu contentId="expensesMenu" side="start">
+        <ion-content>
+            <app-expenses-settings></app-expenses-settings>
+        </ion-content>
+    </ion-menu>
+
+    <app-add-expenses (add)="addNewExpenses($event)"></app-add-expenses>
+    <ion-list>
+        <app-expenses-list-item (click)="showEditExpenses(expenses)"
+                                (updateExpenses)="updateExpenses($event)"
+                                *ngFor="let expenses of expensesList" [data]="expenses"
+        ></app-expenses-list-item>
+    </ion-list>
 </ion-content>

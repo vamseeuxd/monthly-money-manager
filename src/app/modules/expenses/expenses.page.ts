@@ -3,6 +3,7 @@ import {IExpenses} from 'src/app/modules/expenses/models/expenses';
 import {LoadingController, ModalController} from '@ionic/angular';
 import {ExpensesEditorComponent} from 'src/app/modules/expenses/components/expenses-editor/expenses-editor.component';
 import {ExpensesService} from 'src/app/modules/expenses/services/expenses/expenses.service';
+import {ExpensesSettingsComponent} from './components/expenses-settings/expenses-settings.component';
 
 @Component({
     selector: 'app-tab3',
@@ -19,11 +20,6 @@ export class ExpensesPage {
         public loadingController: LoadingController,
     ) {
         this.subscribeExpenses();
-        this.initializeLoader();
-
-    }
-
-    initializeLoader() {
     }
 
     async showLoader() {
@@ -48,7 +44,27 @@ export class ExpensesPage {
         this.expensesService.add($event);
     }
 
-    async editExpenses(data) {
+    async showExpensesSettings() {
+        const modal = await this.modalController.create({
+            component: ExpensesSettingsComponent,
+            componentProps: {}
+        });
+
+        return await modal.present().then(value => {
+            modal.onDidDismiss().then(dismisResponse => {
+                switch (dismisResponse.role) {
+                    case 'update':
+                        this.updateExpenses(dismisResponse.data);
+                        break;
+                    case 'delete':
+                        this.deleteExpenses(dismisResponse.data);
+                        break;
+                }
+            });
+        });
+    }
+
+    async showEditExpenses(data) {
         const modal = await this.modalController.create({
             component: ExpensesEditorComponent,
             componentProps: {data}
