@@ -1,0 +1,13 @@
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+
+  mat-tab-group {
+    max-width: 400px;
+    height: 350px;
+  }
+}

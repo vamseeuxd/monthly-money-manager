@@ -1,0 +1,43 @@
+<ng-container *ngIf="users$ | async as users">
+  <ul class="list-group m-2">
+    <li class="list-group-item" *ngFor="let user of users.users">
+      <h6 class="m-0 p-0">{{user.name}}</h6>
+      <p class="m-0 p-0">{{user.email}}</p>
+    </li>
+    <li class="list-group-item" *ngFor="let user of users.users">
+      <h6 class="m-0 p-0">{{user.name}}</h6>
+      <p class="m-0 p-0">{{user.email}}</p>
+    </li>
+    <li class="list-group-item" *ngFor="let user of users.users">
+      <h6 class="m-0 p-0">{{user.name}}</h6>
+      <p class="m-0 p-0">{{user.email}}</p>
+    </li>
+    <li class="list-group-item" *ngFor="let user of users.users">
+      <h6 class="m-0 p-0">{{user.name}}</h6>
+      <p class="m-0 p-0">{{user.email}}</p>
+    </li>
+  </ul>
+</ng-container>
+
+
+<form autocomplete="off" #userForm="ngForm" class="w-100 px-3 pt-3" (submit)="onFormSubmit(userForm)">
+  <mat-form-field appearance="legacy" class="w-100 mb-3">
+    <mat-label>User Name</mat-label>
+    <input required name="name" ngModel matInput placeholder="Enter User Name">
+    <mat-icon matSuffix>person</mat-icon>
+    <mat-hint>Please provide user name</mat-hint>
+    <mat-error>Please provide user name</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy" class="w-100 mb-3">
+    <mat-label>User Email</mat-label>
+    <input required email name="email" ngModel matInput placeholder="Enter User Email">
+    <mat-icon matSuffix>email</mat-icon>
+    <mat-hint>Please provide valid email address</mat-hint>
+    <mat-error>Please provide valid email address</mat-error>
+  </mat-form-field>
+
+  <div class="d-flex justify-content-end mt-3">
+    <button mat-raised-button class="rounded-0" [disabled]="userForm.invalid" color="primary">Creat User</button>
+  </div>
+</form>

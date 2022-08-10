@@ -1,0 +1,56 @@
+<mat-tab-group class="mat-elevation-z2 w-100" mat-stretch-tabs>
+  <mat-tab label="Login">
+    <mat-card>
+      <mat-card-content>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" autocomplete="off">
+          <mat-form-field class="w-100">
+            <input email matInput [ngModel]="'vamsi.flex@gmail.com'" placeholder="Email" name="email" required>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error>Please inform your user email</mat-error>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput [ngModel]="'12345'" type="password" placeholder="Password" name="password" required>
+            <mat-icon matSuffix>lock</mat-icon>
+            <mat-error>Please inform your password</mat-error>
+          </mat-form-field>
+          <div class="w-100 d-flex justify-content-end">
+            <button mat-raised-button class="me-2" type="reset">Reset</button>
+            <button mat-raised-button color="primary" type="submit">Login</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Register">
+    <mat-card>
+      <mat-card-content>
+        <form #registrationForm="ngForm" (ngSubmit)="register(registrationForm)" autocomplete="off">
+          <mat-form-field class="w-100">
+            <input email matInput ngModel placeholder="Email" name="email" required>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error>Please inform your user email</mat-error>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput ngModel placeholder="First Name" name="firstName" required>
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error>Please inform your user First Name</mat-error>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput ngModel placeholder="Last Name" name="lastName" required>
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error>Please inform your user Last Name</mat-error>
+          </mat-form-field>
+          <mat-form-field class="w-100">
+            <input matInput ngModel type="password" placeholder="Password" name="password" required>
+            <mat-icon matSuffix>lock</mat-icon>
+            <mat-error>Please inform your password</mat-error>
+          </mat-form-field>
+          <div class="w-100 d-flex justify-content-end">
+            <button mat-raised-button class="me-2" type="reset">Reset</button>
+            <button mat-raised-button color="primary" type="submit">Register</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
