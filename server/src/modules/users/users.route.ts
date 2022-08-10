@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import UsersController from '@controllers/users.controller';
-import { CreateUserDto } from '@dtos/users.dto';
-import { Routes } from '@interfaces/routes.interface';
+import UsersController from '@/modules/users/users.controller';
+import { CreateUserDto } from '@/modules/users/users.dto';
+import { Routes } from '@/routes.interface';
 import validationMiddleware from '@middlewares/validation.middleware';
 import authMiddleware from '@middlewares/auth.middleware';
 

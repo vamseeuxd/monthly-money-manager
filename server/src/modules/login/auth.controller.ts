@@ -1,8 +1,8 @@
 import {NextFunction, Request, Response} from 'express';
-import {CreateUserDto} from '@dtos/users.dto';
-import {User} from '@interfaces/users.interface';
-import {DataStoredInToken, RequestWithUser} from '@interfaces/auth.interface';
-import AuthService from '@services/auth.service';
+import {CreateUserDto} from '@/modules/users/users.dto';
+import {User} from '@/modules/users/users.interface';
+import {DataStoredInToken, RequestWithUser} from '@/modules/login/auth.interface';
+import AuthService from '@/modules/login/auth.service';
 import {SECRET_KEY} from "@config";
 import {verify} from "jsonwebtoken";
 import DB from "@databases";

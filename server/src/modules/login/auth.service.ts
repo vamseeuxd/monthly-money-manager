@@ -2,10 +2,10 @@ import {compare, hash} from 'bcrypt';
 import {sign} from 'jsonwebtoken';
 import {SECRET_KEY} from '@config';
 import DB from '@databases';
-import {CreateUserDto} from '@dtos/users.dto';
+import {CreateUserDto} from '@/modules/users/users.dto';
 import {HttpException} from '@exceptions/HttpException';
-import {DataStoredInToken, TokenData} from '@interfaces/auth.interface';
-import {User} from '@interfaces/users.interface';
+import {DataStoredInToken, TokenData} from '@/modules/login/auth.interface';
+import {User} from '@/modules/users/users.interface';
 import {isEmpty} from '@utils/util';
 
 class AuthService {

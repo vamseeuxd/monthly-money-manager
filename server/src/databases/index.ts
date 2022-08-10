@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 import {NODE_ENV, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE} from '@config';
-import UserModel from '@models/users.model';
+import UserModel from '@/modules/users/users.model';
 import {logger} from '@utils/logger';
 
 const sequelize = new Sequelize.Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
