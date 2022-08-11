@@ -1,32 +1,36 @@
-import {Component} from '@angular/core';
-import {NgForm} from '@angular/forms';
-import {AuthService} from "../shared/auth.service";
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {NgForm} from "@angular/forms";
+import {ICard} from "../../shared/value-objects/ICard.interface";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-add-card',
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.scss']
 })
-export class LoginComponent {
+export class AddComponent implements OnInit {
 
   constructor(
-    private authService: AuthService,
     private _snackBar: MatSnackBar,
+    public http: HttpClient,
     private router: Router,
   ) {
-
   }
 
-  login(loginForm: NgForm) {
-    this.authService.login(loginForm.value.email, loginForm.value.password).subscribe(value => {
+  ngOnInit(): void {
+  }
+
+  saveAndClose(addForm: NgForm) {
+    this.http.post<{ data: ICard, message: string }>('api/cards', addForm.value).subscribe(value => {
+      addForm.resetForm({});
+      this.router.navigate(['cards', 'show-all'])
       this._snackBar.open(value.message, 'OK', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         duration: 2000,
       });
-      this.router.navigate(['./cards'])
     }, error => {
       this._snackBar.open(error.error.message, 'OK', {
         horizontalPosition: 'right',
@@ -36,9 +40,9 @@ export class LoginComponent {
     })
   }
 
-  register(registrationForm: NgForm) {
-    this.authService.register(registrationForm.value).subscribe(value => {
-      registrationForm.resetForm({});
+  saveAndAddNew(addForm: NgForm) {
+    this.http.post<{ data: ICard, message: string }>('api/cards', addForm.value).subscribe(value => {
+      addForm.resetForm({});
       this._snackBar.open(value.message, 'OK', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',

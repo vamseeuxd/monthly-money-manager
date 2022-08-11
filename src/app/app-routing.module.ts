@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'cards',
     canActivate: [AuthService],
-    loadChildren: () => import('./cards/cards.module').then(m => m.CardsModule)
+    loadChildren: () => import('./cards/feature.module').then(m => m.FeatureModule)
   },
   {
     path: 'bank-accounts',

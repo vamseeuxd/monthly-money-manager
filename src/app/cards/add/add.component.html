@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center pt-5">
+  <mat-card class="example-card" style="max-width: 400px;">
+    <mat-card-title-group>
+      <mat-card-title>New Card Details</mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content>
+      <form #addForm="ngForm">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>New Credit Card Name</mat-label>
+          <input name="name" ngModel required matInput placeholder="New Credit Card Name">
+        </mat-form-field>
+
+
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>New Credit Card Number</mat-label>
+          <input name="number" ngModel required matInput placeholder="New Credit Card Number">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-button routerLink="../show-all">Cancel</button>
+      <button mat-button (click)="saveAndClose(addForm)" [disabled]="addForm.invalid">Save And Close</button>
+      <button mat-button (click)="saveAndAddNew(addForm)" [disabled]="addForm.invalid">Save & Add New</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>
