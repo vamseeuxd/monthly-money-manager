@@ -8,10 +8,10 @@ import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-edit-card',
-  templateUrl: './edit-card.component.html',
-  styleUrls: ['./edit-card.component.scss']
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.scss']
 })
-export class EditCardComponent implements OnInit {
+export class EditComponent implements OnInit {
 
   card: ICard | undefined;
 

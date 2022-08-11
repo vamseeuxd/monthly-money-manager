@@ -7,10 +7,10 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-show-cards',
-  templateUrl: './show-cards.component.html',
-  styleUrls: ['./show-cards.component.scss']
+  templateUrl: './show.component.html',
+  styleUrls: ['./show.component.scss']
 })
-export class ShowCardsComponent implements OnInit {
+export class ShowComponent implements OnInit {
   @HostBinding('class') cssClass = 'd-block position-relative';
   /*cards: any[] = [];*/
   refresh: BehaviorSubject<Date> = new BehaviorSubject<Date>(new Date());

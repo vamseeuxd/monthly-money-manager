@@ -7,10 +7,10 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-card',
-  templateUrl: './add-card.component.html',
-  styleUrls: ['./add-card.component.scss']
+  templateUrl: './add.component.html',
+  styleUrls: ['./add.component.scss']
 })
-export class AddCardComponent implements OnInit {
+export class AddComponent implements OnInit {
 
   constructor(
     private _snackBar: MatSnackBar,
