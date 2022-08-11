@@ -28,7 +28,11 @@ export class LoginComponent {
       });
       this.router.navigate(['./cards'])
     }, error => {
-      debugger;
+      this._snackBar.open(error.error.message, 'OK', {
+        horizontalPosition: 'right',
+        verticalPosition: 'bottom',
+        duration: 2000,
+      });
     })
   }
 

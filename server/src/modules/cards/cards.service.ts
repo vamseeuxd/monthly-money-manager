@@ -4,6 +4,7 @@ import {HttpException} from '@exceptions/HttpException';
 import {Card} from '@/modules/cards/cards.interface';
 import {isEmpty} from '@utils/util';
 import {CreateCardDto} from "@/modules/cards/cards.dto";
+import {Op} from "sequelize";
 
 class CardService {
   public cards = DB.Cards;
@@ -33,6 +34,8 @@ class CardService {
 
   public async updateCard(cardId: number, cardData: CreateCardDto): Promise<Card> {
     if (isEmpty(cardData)) throw new HttpException(400, "cardData is empty");
+    const duplicateCard: Card = await this.cards.findOne({where: {number: cardData.number, id: {[Op.ne]: cardId}}});
+    if (duplicateCard) throw new HttpException(409, `This card number ${cardData.number} already exists`);
 
     const findCard: Card = await this.cards.findByPk(cardId);
     if (!findCard) throw new HttpException(409, "Card doesn't exist");

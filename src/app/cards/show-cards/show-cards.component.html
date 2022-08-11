@@ -1,14 +1,14 @@
-<ol class="list-group list-group-numbered m-2" style="max-height: calc(100vh - 140px);overflow-y: auto;">
+<ol class="list-group list-group-numbered m-2" *ngIf="cards$ | async as cards" style="max-height: calc(100vh - 140px);overflow-y: auto;">
   <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let card of cards">
     <div class="ms-2 me-auto">
       <div class="fw-bold">{{card.name}}</div>
       {{formatCardNumber(card.number)}}
     </div>
     <div>
-      <button mat-icon-button color="primary" routerLink="../edit/1" aria-label="Example icon button with a heart icon">
+      <button mat-icon-button color="primary" routerLink="../edit/{{card.id}}">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button (click)="deleteCard(card)" color="warn" aria-label="Example icon button with a heart icon">
+      <button mat-icon-button (click)="deleteCard(card)" color="warn">
         <mat-icon>delete</mat-icon>
       </button>
     </div>
