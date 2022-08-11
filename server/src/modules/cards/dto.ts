@@ -1,6 +1,6 @@
-import {IsString, IsEmail} from 'class-validator';
+import {IsString} from 'class-validator';
 
-export class CreateCardDto {
+export class CreateDto {
   @IsString()
   public number: string;
 

@@ -1,9 +1,9 @@
 import {Sequelize, DataTypes, Model, Optional} from 'sequelize';
-import {Card} from '@/modules/cards/cards.interface';
+import {IItem} from './interface';
 
-export type CardCreationAttributes = Optional<Card, 'id' | 'name' | 'number'>;
+export type CreationAttributes = Optional<IItem, 'id' | 'name' | 'number'>;
 
-export class CardModel extends Model<Card, CardCreationAttributes> implements Card {
+export class ItemModel extends Model<IItem, CreationAttributes> implements IItem {
   public id: number;
   public name: string;
   public number: string;
@@ -12,8 +12,8 @@ export class CardModel extends Model<Card, CardCreationAttributes> implements Ca
   public readonly updatedAt!: Date;
 }
 
-export default function (sequelize: Sequelize): typeof CardModel {
-  CardModel.init(
+export default function (sequelize: Sequelize): typeof ItemModel {
+  ItemModel.init(
     {
       id: {
         autoIncrement: true,
@@ -36,5 +36,5 @@ export default function (sequelize: Sequelize): typeof CardModel {
     },
   );
 
-  return CardModel;
+  return ItemModel;
 }
